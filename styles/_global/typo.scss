@@ -19,18 +19,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, h2 {
-	display: inline-block;
-	position: relative;
-
-	&:after {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		right: 0;
-		left: 0;
-		background: var.$yellow;
-		background: var(--heading_underline);
-	}
+	@include mixins.underline;
 }
 
 h1 {
@@ -55,4 +44,11 @@ h2 {
 		top: 70%;
 		bottom: 0%;
 	}
+}
+
+em {
+	color: var.$pink;
+	color: var(--emphasis_text_colour);
+	font-style: italic;
+	font-weight: 600;
 }

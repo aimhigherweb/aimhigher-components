@@ -1,0 +1,16 @@
+@use 'lib/styles/variables.scss' as var;
+
+@mixin underline {
+	display: inline-block;
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		left: 0;
+		background: var.$yellow;
+		background: var(--heading_underline);
+	}
+}

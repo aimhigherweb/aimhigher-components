@@ -4,9 +4,7 @@ import Label from '../label'
 
 import styles from './checkbox.module.scss'
 
-const Checkbox = (props) => {
-	const {children, ...attr} = props
-
+const Checkbox = ({children, ...attr}) => {
 	attr.id = attr.id || attr.name
 
 	return (

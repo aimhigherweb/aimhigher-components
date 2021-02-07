@@ -1,0 +1,43 @@
+.details {
+	--heading_underline: #{var.$primary};
+	margin-bottom: 40px;
+	border: 5px solid transparent;
+
+	&:nth-of-type(2n) {
+		--heading_underline: #{var.$secondary};
+	}
+
+	&[open] {
+		--heading_underline: #{var.$yellow};
+
+		padding: 20px;
+		border-color: var.$pink;
+	}
+
+	&:hover, &:focus {
+		border-color: var.$pink;
+	}
+
+	@media(min-width: 60em) {
+		margin-bottom: 80px;
+
+		&[open] {
+			padding: 70px;
+		}
+	}
+}
+
+.summary {
+	@include mixins.underline;
+
+	padding-right: 1em;
+	font-size: 1.4em;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	&:after {
+		top: 70%;
+		bottom: 0%;
+	}
+}
