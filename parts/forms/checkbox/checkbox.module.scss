@@ -1,0 +1,58 @@
+.input {
+	display: none;
+
+	&[checked] {
+		+ label {
+			&:after {
+				content: '✓';
+			}
+		}
+	}
+}
+
+.label {
+	display: flex;
+	position: relative;
+	flex: 1 1 40%;
+	align-items: center;
+	margin: 0 0 26px;
+	font-style: italic;
+	font-weight: 400;
+	text-transform: none;
+	composes: label from '../label/label.module.scss';
+	cursor: pointer;
+
+	&:before, &:after {
+		display: block;
+		flex: 0 0 auto;
+	}
+
+	&:before {
+		content: '';
+		width: 20px;
+		height: 20px;
+		margin-right: 1ch;
+		border: 2px solid var.$primary;
+		background: var.$primary;
+	}
+
+	&:after {
+		position: absolute;
+		left: 3px;
+		color: #ffffff;
+		font-size: 1.3em;
+	}
+
+	@media(min-width: 60em) {
+		&:before {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	@media(min-width: 90em) {
+		&:after {
+			font-size: 1.1em;
+		}
+	}
+}
