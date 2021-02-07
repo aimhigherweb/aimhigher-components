@@ -9,8 +9,8 @@ const Checkbox = ({children, ...attr}) => {
 
 	return (
 		<Fragment>
-			<input className={styles.input} {...attr} />
-			<Label className={styles.label} htmlFor={attr.id}>{children}</Label>
+			<input className={`${styles.input} ${styles[`input_${attr.type}`]}`} {...attr} />
+			<Label className={`${styles.label} ${styles[`label_${attr.type}`]}`} htmlFor={attr.id}>{children}</Label>
 		</Fragment>
 	)
 }

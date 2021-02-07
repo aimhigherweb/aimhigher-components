@@ -4,6 +4,16 @@
 	&[checked] {
 		+ label {
 			&:after {
+				content: '';
+			}
+		}
+	}
+}
+
+.input_checkbox {
+	&[checked] {
+		+ label {
+			&:after {
 				content: '✓';
 			}
 		}
@@ -53,6 +63,27 @@
 	@media(min-width: 90em) {
 		&:after {
 			font-size: 1.1em;
+		}
+	}
+}
+
+.label_radio {
+	&:before, &:after {
+		border-radius: 50%;
+	}
+
+	&:after {
+		left: 4px;
+		width: 16px;
+		height: 16px;
+		background: #ffffff;
+	}
+
+	@media(min-width: 60em) {
+		&:after {
+			left: 5px;
+			width: 19px;
+			height: 19px;
 		}
 	}
 }
