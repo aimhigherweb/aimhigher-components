@@ -58,3 +58,36 @@ pre, code, kbd {
 a {
 	color: var.$primary;
 }
+
+table {
+	max-width: 100%;
+	overflow-x: auto;
+	border-collapse: collapse;
+	font-size: 0.8em;
+
+	thead {
+		border-top: 3px solid var.$primary_dark_90;
+		border-bottom: 3px solid var.$primary_dark_90;
+		background: var.$primary_light_10;
+	}
+
+	th {
+		padding: 20px;
+	}
+
+	td {
+		padding: 15px;
+		border-right: 1px solid var.$primary_light_25;
+		text-align: center;
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	tr {
+		&:nth-child(2n) {
+			background: var.$primary_light_10;
+		}
+	}
+}
