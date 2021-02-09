@@ -1,5 +1,9 @@
+*, *:before, *:after {
+	text-decoration-skip-ink: auto;
+}
+
 body {
-	color: #000000;
+	color: var.$neutral;
 	font-family: var.$font_main;
 	font-size: 16px;
 	font-weight: 500;
@@ -45,4 +49,12 @@ em {
 	color: var(--emphasis_text_colour);
 	font-style: italic;
 	font-weight: 600;
+}
+
+pre, code, kbd {
+	font-family: var.$font_code;
+}
+
+a {
+	color: var.$primary;
 }

@@ -1,17 +1,23 @@
 .button {
-	padding: 15px 20px;
+	padding: 0.7em 0.9em;
 	border: none;
+	border: 2px solid var.$yellow;
+	border-color: var(--button_border);
 	background: var.$yellow;
-	box-shadow: 4px 4px 0 0 #000000;
-	color: #000000;
+	background: var(--button_background);
+	box-shadow: 0.13em 0.13em 0 0 var.$neutral;
+	box-shadow: 0.13em 0.13em 0 0 var(--button_shadow);
+	color: var.$neutral;
+	color: var(--button_text);
 	font-size: 1.25em;
 	font-weight: 700;
 	text-transform: uppercase;
 	cursor: pointer;
 
 	&:hover, &:focus {
-		background: #000000;
-		box-shadow: none;
-		color: var.$yellow;
+		border-color: var(--button_text);
+		background: var(--button_text);
+		box-shadow: 0.13em 0.13em 0 0 var(--button_background);
+		color: var(--button_background);
 	}
 }

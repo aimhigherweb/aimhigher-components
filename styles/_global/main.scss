@@ -1,4 +1,4 @@
-* {
+*, *:before, *:after {
 	box-sizing: border-box;
 }
 
@@ -15,6 +15,31 @@
 	--red: #{var.$red};
 	--yellow: #{var.$yellow};
 
+	/* Text Colours and Highlights */
 	--heading_underline: #{var.$yellow};
 	--emphasis_text_colour: #{var.$pink};
+
+	/* Buttons */
+	--button_border: #{var.$yellow};
+	--button_background: #{var.$yellow};
+	--button_text: #{var.$neutral};
+	--button_shadow: #{var.$neutral};
+
+	/* Logo */
+	--logo-neutral: var(--neutral);
+	--logo-secondary: var(--secondary);
+	--logo-primary: var(--primary);
+	--logo-gradient: url('#LogoGradient');
+}
+
+body, html {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	margin: 0;
 }
