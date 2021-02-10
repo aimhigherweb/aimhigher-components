@@ -57,6 +57,11 @@ pre, code, kbd {
 
 a {
 	color: var.$primary;
+
+	&:hover, &:focus {
+		@include mixins.underline;
+		text-decoration: none;
+	}
 }
 
 table {
@@ -89,5 +94,13 @@ table {
 		&:nth-child(2n) {
 			background: var.$primary_light_10;
 		}
+	}
+}
+
+nav {
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 }
