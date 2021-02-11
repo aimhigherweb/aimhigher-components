@@ -1,0 +1,46 @@
+.logo {
+	path {
+		fill: currentColor;
+	}
+
+	*:global(.cls-s) {
+		color: var.$secondary;
+	}
+
+	*:global(.cls-p) {
+		color: var.$primary;
+	}
+
+	*:global(.cls-n) {
+		color: var.$neutral;
+	}
+
+	*:global(.cls-g) {
+		color: var.$secondary;
+	}
+}
+
+.logo_light {
+	--logo-neutral: #{var.$white};
+	--logo-secondary: #{var.$white};
+	--logo-primary: #{var.$white};
+	--logo-gradient: #{var.$white};
+
+	composes: logo;
+
+	*:global(.cls-s) {
+		color: var.$white;
+	}
+
+	*:global(.cls-p) {
+		color: var.$white;
+	}
+
+	*:global(.cls-n) {
+		color: var.$white;
+	}
+
+	*:global(.cls-g) {
+		color: var.$white;
+	}
+}

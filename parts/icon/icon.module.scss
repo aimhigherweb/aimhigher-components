@@ -1,0 +1,11 @@
+.icon {
+	height: 1.5em;
+
+	*:global(.cls-p) {
+		color: var.$white;
+	}
+
+	*:global(.cls-b) {
+		color: var.$primary;
+	}
+}
