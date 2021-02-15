@@ -1,5 +1,11 @@
 *, *:before, *:after {
+
+	outline-offset: 0.2em;
 	text-decoration-skip-ink: auto;
+}
+
+*:focus {
+	outline: 3px solid var.$yellow;
 }
 
 body {
@@ -58,7 +64,7 @@ pre, code, kbd {
 a {
 	color: var.$primary;
 
-	&:hover, &:focus {
+	&:hover {
 		@include mixins.underline;
 		text-decoration: none;
 	}
@@ -102,5 +108,9 @@ nav {
 		margin: 0;
 		padding: 0;
 		list-style: none;
+	}
+
+	a {
+		display: block;
 	}
 }
