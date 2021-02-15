@@ -1,14 +1,32 @@
 .input {
 	display: block;
-	flex: 1 1 calc(100% - 100px);
+	flex: 1 1 100%;
 	margin: 0;
 	padding: 5px 25px;
-	border: 2px solid var.$primary;
-	background: var.$primary;
-	color: #ffffff;
+	border: 2px solid #48abdd;
+	background: #48abdd;
+	color: #0d0d0d;
 	font-size: 1em;
 
-	@media(min-width: 60em) {
-		flex-basis: calc(100% - 120px)
+	&::placeholder {
+		color: #0d0d0d;
+	}
+
+	&[type='password'] {
+		&::-ms-reveal {
+			display: none;
+		}
+	}
+
+	&:invalid {
+		box-shadow: none;
+
+		&:focus {
+			border-color: var.$warning;
+		}
+	}
+
+	&:valid {
+		border-color: var.$success;
 	}
 }

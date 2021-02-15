@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import styles from './input.module.scss'
+import styles from './input.module.scss';
 
-const Input = ({...attr}) => (
-	<input className={styles.input} {...attr} />
-)
+const Input = ({ className, ...attr }) => (
+	<input className={`${styles.input} ${className}`} {...attr} />
+);
 
-export default Input
+export default Input;

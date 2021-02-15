@@ -35,10 +35,13 @@ $pink: #cb5699;
 $purple: #7561c1;
 $red: #e53f51;
 $yellow: #ffce03;
+$orange: #ff8c00;
 
 $good: $green;
-$warning: $yellow;
+$success: $good;
+$warning: $orange;
 $fail: $red;
+$error: $fail;
 
 // Typography
 $font_main: Montserrat, Arial, sans-serif;

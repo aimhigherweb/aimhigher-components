@@ -10,50 +10,76 @@ import Linkedin from "../../img/icons/linkedin.svg";
 import Projects from "../../img/icons/project.svg";
 import Twitch from "../../img/icons/twitch.svg";
 import Twitter from "../../img/icons/twitter.svg";
+import PasswordHide from '../../img/icons/password-hide.svg';
+import PasswordShow from '../../img/icons/password-show.svg';
+import Cancel from "../../img/icons/cancel.svg";
+import Error from "../../img/icons/error.svg";
+import InProgress from "../../img/icons/in-progress.svg";
+import Success from "../../img/icons/success.svg";
+
 import styles from './icon.module.scss';
 
-const Icon = ({ icon }) => {
+const Icon = ({ icon, className }) => {
 	let Img = false;
 
 	// eslint-disable-next-line default-case
 	switch (icon) {
 		case `docs`:
 		case `doc`:
-			Img = () => (<Doc className={styles.icon} />);
+			Img = (props) => (<Doc {...props} />);
 			break;
 		case `projects`:
-			Img = () => (<Projects className={styles.icon} />);
+			Img = (props) => (<Projects {...props} />);
 			break;
 		case `analytics`:
 		case `chart`:
-			Img = () => (<Analytics className={styles.icon} />);
+			Img = (props) => (<Analytics {...props} />);
 			break;
 		case `codepen`:
-			Img = () => (<Codepen className={styles.icon} />);
+			Img = (props) => (<Codepen {...props} />);
 			break;
 		case `facebook`:
-			Img = () => (<Facebook className={styles.icon} />);
+			Img = (props) => (<Facebook {...props} />);
 			break;
 		case `github`:
-			Img = () => (<Github className={styles.icon} />);
+			Img = (props) => (<Github {...props} />);
 			break;
 		case `instagram`:
-			Img = () => (<Instagram className={styles.icon} />);
+			Img = (props) => (<Instagram {...props} />);
 			break;
 		case `linkedin`:
-			Img = () => (<Linkedin className={styles.icon} />);
+			Img = (props) => (<Linkedin {...props} />);
 			break;
 		case `twitch`:
-			Img = () => (<Twitch className={styles.icon} />);
+			Img = (props) => (<Twitch {...props} />);
 			break;
 		case `twitter`:
-			Img = () => (<Twitter className={styles.icon} />);
+			Img = (props) => (<Twitter {...props} />);
+			break;
+		case `password-hide`:
+			Img = (props) => (<PasswordHide {...props} />);
+			break;
+		case `password-show`:
+			Img = (props) => (<PasswordShow {...props} />);
+			break;
+		case `cancel`:
+			Img = (props) => (<Cancel {...props} />);
+			break;
+		case `error`:
+		case `warning`:
+			Img = (props) => (<Error {...props} />);
+			break;
+		case `in-progress`:
+			Img = (props) => (<InProgress {...props} />);
+			break;
+		case `success`:
+			Img = (props) => (<Success {...props} />);
 			break;
 	}
 
 	if (!Img) return <p>Error, icon {icon} doesn't exist</p>;
 
-	return <Img />;
+	return <Img className={`${styles.icon} ${className}`} />;
 };
 
 export default Icon;
