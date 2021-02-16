@@ -1,22 +1,23 @@
 import React from 'react';
 
 import Analytics from "../../img/icons/analytics.svg";
+import Cancel from "../../img/icons/cancel.svg";
+import Close from '../../img/icons/close.svg';
 import Codepen from "../../img/icons/codepen.svg";
 import Doc from "../../img/icons/doc.svg";
+import Error from "../../img/icons/error.svg";
 import Facebook from "../../img/icons/facebook.svg";
 import Github from "../../img/icons/github.svg";
+import Hamburger from '../../img/icons/hamburger.svg';
+import InProgress from "../../img/icons/in-progress.svg";
 import Instagram from "../../img/icons/instagram.svg";
 import Linkedin from "../../img/icons/linkedin.svg";
-import Projects from "../../img/icons/project.svg";
-import Twitch from "../../img/icons/twitch.svg";
-import Twitter from "../../img/icons/twitter.svg";
 import PasswordHide from '../../img/icons/password-hide.svg';
 import PasswordShow from '../../img/icons/password-show.svg';
-import Cancel from "../../img/icons/cancel.svg";
-import Error from "../../img/icons/error.svg";
-import InProgress from "../../img/icons/in-progress.svg";
+import Projects from "../../img/icons/project.svg";
 import Success from "../../img/icons/success.svg";
-
+import Twitch from "../../img/icons/twitch.svg";
+import Twitter from "../../img/icons/twitter.svg";
 import styles from './icon.module.scss';
 
 const Icon = ({ icon, className }) => {
@@ -74,6 +75,12 @@ const Icon = ({ icon, className }) => {
 			break;
 		case `success`:
 			Img = (props) => (<Success {...props} />);
+			break;
+		case `close`:
+			Img = (props) => (<Close {...props} />);
+			break;
+		case `hamburger`:
+			Img = (props) => (<Hamburger {...props} />);
 			break;
 	}
 

@@ -1,18 +1,17 @@
-import { useState, Fragment, createRef } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-
-import {
-	Label, Input, Button, Error
-} from "..";
+import { createRef, Fragment, useState } from 'react';
 
 import Icon from '../../icon';
-
+import {
+	Button, Error,
+	Input, 	Label
+} from "..";
 import styles from './password.module.scss';
 
 const Password = ({ children, ...attr }) => {
-	const router = useRouter();
-	const { pathname } = router;
+	// TODO: remove next router from lib component
+	// const router = useRouter();
+	// const { pathname } = router;
+	const pathname = ``;
 	const [passwordVisisble, togglePassword] = useState(false);
 	const [requirements, setRequirements] = useState(false);
 	const [passwordValidated, setPasswordValidated] = useState(false);
@@ -93,7 +92,7 @@ const Password = ({ children, ...attr }) => {
 							<li key={index} dangerouslySetInnerHTML={{ __html: err }} />
 						))}
 					</ul>
-					<p><Link href={`${pathname}#password`}>Click here to return to the field and resolve the issue.</Link></p>
+					<p><a href={`${pathname}#password`}>Click here to return to the field and resolve the issue.</a></p>
 				</Error>
 			}
 		</Fragment>
