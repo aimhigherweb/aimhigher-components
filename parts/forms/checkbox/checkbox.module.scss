@@ -10,6 +10,12 @@
 			}
 		}
 	}
+
+	&:focus {
+		+ label {
+			outline: 3px solid var.$yellow;
+		}
+	}
 }
 
 .input_checkbox {
@@ -25,9 +31,9 @@
 .label {
 	display: flex;
 	position: relative;
-	flex: 1 1 40%;
+	flex: 1 1 auto;
 	align-items: center;
-	margin: 0 0 26px;
+	margin: 0 10px 26px;
 	font-style: italic;
 	font-weight: 400;
 	text-transform: none;
@@ -44,15 +50,19 @@
 		width: 20px;
 		height: 20px;
 		margin-right: 1ch;
-		border: 2px solid var.$primary;
-		background: var.$primary;
+		border: 2px solid #48abdd;
+		background: #48abdd;
 	}
 
 	&:after {
 		position: absolute;
 		left: 3px;
-		color: #ffffff;
+		color: var.$neutral;
 		font-size: 1.3em;
+	}
+
+	@media(min-width: 40em) {
+		flex-basis: 40%;
 	}
 
 	@media(min-width: 60em) {

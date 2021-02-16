@@ -1,7 +1,9 @@
 .details {
 	--heading_underline: #{var.$primary};
-	margin-bottom: 40px;
+	max-width: 800px;
+	margin: 0 auto 40px;
 	border: 5px solid transparent;
+	text-align: left;
 
 	&:nth-of-type(2n) {
 		--heading_underline: #{var.$secondary};

@@ -27,6 +27,8 @@
 	}
 
 	&:valid {
-		border-color: var.$success;
+		&[required] {
+			border-color: var.$success;
+		}
 	}
 }

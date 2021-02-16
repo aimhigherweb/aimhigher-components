@@ -35,11 +35,19 @@ h1, h2 {
 h1 {
 	margin: 20px 0;
 	padding-right: 0.5em;
-	font-size: 6em;
+	font-size: 3em;
 	font-weight: 700;
 
 	&:after {
 		bottom: 25%;
+	}
+
+	@media(min-width: 40em) {
+		font-size: 5em;
+	}
+
+	@media(min-width: 60em) {
+		font-size: 6em;
 	}
 }
 
