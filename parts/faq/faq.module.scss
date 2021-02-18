@@ -17,7 +17,7 @@
 	}
 
 	&:hover, &:focus {
-		border-color: var.$pink;
+		--heading_underline: #{var.$pink};
 	}
 
 	@media(min-width: 60em) {
@@ -37,6 +37,11 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	cursor: pointer;
+
+	&:focus {
+		--heading_underline: #{var.$yellow};
+		outline-color: transparent;
+	}
 
 	&:after {
 		bottom: -0.5%;
