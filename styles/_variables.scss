@@ -44,7 +44,7 @@ $fail: $red;
 $error: $fail;
 
 // Typography
-$font_main: Montserrat, Arial, sans-serif;
-$font_headings: Quicksand, Arial, sans-serif;
-$font_light: Lato, Arial, sans-serif;
+$font_main: Montserrat, Quicksand, Lato, sans-serif;
+$font_headings: Quicksand, Montserrat, Lato, sans-serif;
+$font_light: Lato, Montserrat, Quicksand, sans-serif;
 $font_code: 'Source Code Pro', monospace;

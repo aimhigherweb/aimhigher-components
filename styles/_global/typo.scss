@@ -2,6 +2,7 @@
 
 	outline-offset: 0.2em;
 	text-decoration-skip-ink: auto;
+	font-family: inherit;
 }
 
 *:focus {
@@ -11,6 +12,7 @@
 body {
 	color: var.$neutral;
 	font-family: var.$font_main;
+	font-display: swap;
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1.4;
@@ -26,6 +28,7 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: var.$font_headings;
+	letter-spacing: 0.03em;
 }
 
 h1, h2 {
@@ -35,11 +38,19 @@ h1, h2 {
 h1 {
 	margin: 20px 0;
 	padding-right: 0.5em;
-	font-size: 6em;
+	font-size: 3em;
 	font-weight: 700;
 
 	&:after {
 		bottom: 25%;
+	}
+
+	@media(min-width: 40em) {
+		font-size: 5em;
+	}
+
+	@media(min-width: 60em) {
+		font-size: 6em;
 	}
 }
 

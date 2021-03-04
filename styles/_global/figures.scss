@@ -1,0 +1,25 @@
+figure {
+	--heading_underline: #{var.$purple};
+
+	max-width: 960px;
+	margin: 25px auto;
+	text-align: center;
+}
+
+figcaption {
+	@include mixins.underline;
+	z-index: 2;
+
+	padding: 15px 10px;
+	font-family: var.$font_headings;
+	font-size: 0.9em;
+	font-weight: bold;
+
+	&:after {
+		right: 10px;
+		bottom: 15px;
+		left: 10px;
+		height: 0.6em;
+		opacity: 0.5;
+	}
+}

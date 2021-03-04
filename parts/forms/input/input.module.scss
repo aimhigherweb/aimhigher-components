@@ -10,6 +10,7 @@
 
 	&::placeholder {
 		color: #0d0d0d;
+		font-style: italic;
 	}
 
 	&[type='password'] {
@@ -27,6 +28,8 @@
 	}
 
 	&:valid {
-		border-color: var.$success;
+		&[required] {
+			border-color: var.$success;
+		}
 	}
 }
