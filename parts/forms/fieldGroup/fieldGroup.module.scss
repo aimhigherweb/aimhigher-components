@@ -8,4 +8,17 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 -10px -26px;
+
+	label {
+		flex: 1 1 auto;
+		margin-top: 0;
+	}
+}
+
+@media(min-width: 40em) {
+	.container {
+		label {
+			flex-basis: 40%;
+		}
+	}
 }

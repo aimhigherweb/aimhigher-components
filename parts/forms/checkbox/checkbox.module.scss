@@ -31,14 +31,14 @@
 .label {
 	display: flex;
 	position: relative;
-	flex: 1 1 auto;
 	align-items: center;
-	margin: 0 10px 26px;
+	width: 100%;
+	margin: 26px 10px;
 	font-style: italic;
 	font-weight: 400;
 	text-transform: none;
-	composes: label from '../label/label.module.scss';
 	cursor: pointer;
+	composes: label from '../label/label.module.scss';
 
 	&:before, &:after {
 		display: block;
@@ -59,10 +59,6 @@
 		left: 3px;
 		color: var.$neutral;
 		font-size: 1.3em;
-	}
-
-	@media(min-width: 40em) {
-		flex-basis: 40%;
 	}
 
 	@media(min-width: 60em) {
