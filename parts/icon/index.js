@@ -73,6 +73,7 @@ const Icon = ({ icon, className }) => {
 		case `in-progress`:
 			Img = (props) => (<InProgress {...props} />);
 			break;
+		case `completed`:
 		case `success`:
 			Img = (props) => (<Success {...props} />);
 			break;
