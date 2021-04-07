@@ -9,11 +9,9 @@ import {
 } from "..";
 import styles from './password.module.scss';
 
-const Password = ({ children, validate, ...attr }) => {
-	// TODO: remove next router from lib component
-	// const router = useRouter();
-	// const { pathname } = router;
-	const pathname = ``;
+const Password = ({
+	children, validate, pathname, ...attr
+}) => {
 	const [passwordVisisble, togglePassword] = useState(false);
 	const [requirements, setRequirements] = useState(false);
 	const [passwordValidated, setPasswordValidated] = useState(false);
@@ -132,7 +130,10 @@ const Password = ({ children, validate, ...attr }) => {
 				</Button>
 			</div>
 			{requirements
-				&& <Error tabIndex="-1" ref={validationError}>
+				&& <Error
+					tabIndex="-1"
+					// ref={validationError}
+				>
 					<Icon icon="error" className={styles.error_icon} />
 					<p>Your password fails to meet the following requirements:</p>
 					<ul>
@@ -140,7 +141,7 @@ const Password = ({ children, validate, ...attr }) => {
 							<li key={index} dangerouslySetInnerHTML={{ __html: err }} />
 						))}
 					</ul>
-					<p><a href={`${pathname}#password`}>Click here to return to the field and resolve the issue.</a></p>
+					{/* <p><a href={`${pathname}#password`}>Click here to return to the field and resolve the issue.</a></p> */}
 				</Error>
 			}
 		</Fragment>

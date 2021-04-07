@@ -18,6 +18,7 @@ import Projects from "../../img/icons/project.svg";
 import Success from "../../img/icons/success.svg";
 import Twitch from "../../img/icons/twitch.svg";
 import Twitter from "../../img/icons/twitter.svg";
+import Chevron from '../../img/icons/chevron_down.svg';
 import styles from './icon.module.scss';
 
 const Icon = ({ icon, className }) => {
@@ -82,6 +83,10 @@ const Icon = ({ icon, className }) => {
 			break;
 		case `hamburger`:
 			Img = (props) => (<Hamburger {...props} />);
+			break;
+		case `chevron`:
+		case `down`:
+			Img = (props) => (<Chevron {...props} />);
 			break;
 	}
 
