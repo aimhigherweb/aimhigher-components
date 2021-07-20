@@ -2,6 +2,7 @@ import React from 'react';
 
 import Analytics from "../../img/icons/analytics.svg";
 import Cancel from "../../img/icons/cancel.svg";
+import Chevron from '../../img/icons/chevron_down.svg';
 import Close from '../../img/icons/close.svg';
 import Codepen from "../../img/icons/codepen.svg";
 import Doc from "../../img/icons/doc.svg";
@@ -73,6 +74,7 @@ const Icon = ({ icon, className }) => {
 		case `in-progress`:
 			Img = (props) => (<InProgress {...props} />);
 			break;
+		case `completed`:
 		case `success`:
 			Img = (props) => (<Success {...props} />);
 			break;
@@ -81,6 +83,10 @@ const Icon = ({ icon, className }) => {
 			break;
 		case `hamburger`:
 			Img = (props) => (<Hamburger {...props} />);
+			break;
+		case `chevron`:
+		case `down`:
+			Img = (props) => (<Chevron {...props} />);
 			break;
 	}
 

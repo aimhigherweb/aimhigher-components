@@ -2,8 +2,8 @@ import React from 'react';
 
 import * as styles from './form.module.scss';
 
-const Form = ({ children, ...attr }) => (
-	<form {...attr} className={styles.form}>
+const Form = ({ children, className, ...attr }) => (
+	<form {...attr} className={`${styles.form} ${className}`}>
 		{children}
 	</form>
 );

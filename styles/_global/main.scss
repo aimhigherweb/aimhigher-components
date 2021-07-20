@@ -28,6 +28,7 @@
 	/* Logo */
 	--logo-neutral: #4c4c4d;
 	--logo-secondary: #00b4c2;
+	--logo-gradient: url('#_LogoGradient');
 	--logo-gradient_1: url('#_LogoGradient1');
 	--logo-gradient_2: url('#_LogoGradient2');
 }
@@ -47,4 +48,10 @@ body {
 .sr-only {
 	position: absolute;
 	right: -200vw;
+}
+
+#__next {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
 }
