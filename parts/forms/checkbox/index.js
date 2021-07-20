@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react';
 
 import Label from '../label';
-
-import styles from './checkbox.module.scss';
+import * as styles from './checkbox.module.scss';
 
 const Checkbox = ({ children, ...attr }) => {
 	const [checked, toggleChecked] = useState(false);

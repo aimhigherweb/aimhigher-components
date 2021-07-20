@@ -18,7 +18,7 @@ import Projects from "../../img/icons/project.svg";
 import Success from "../../img/icons/success.svg";
 import Twitch from "../../img/icons/twitch.svg";
 import Twitter from "../../img/icons/twitter.svg";
-import styles from './icon.module.scss';
+import * as styles from './icon.module.scss';
 
 const Icon = ({ icon, className }) => {
 	let Img = false;

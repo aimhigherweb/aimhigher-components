@@ -1,47 +1,36 @@
 .logo {
+	--logo-neutral: #{var.$grey};
+	--logo-secondary: #{var.$secondary};
+	--logo-gradient_1: url(#_LogoGradient1);
+	--logo-gradient_2: url(#_LogoGradient2);
+
 	path {
 		fill: currentColor;
 	}
 
 	*:global(.cls-s) {
-		color: var.$secondary;
-	}
-
-	*:global(.cls-p) {
-		color: var.$primary;
+		color: var(--logo-secondary);
 	}
 
 	*:global(.cls-n) {
-		color: var.$neutral;
+		color: var(--logo-neutral);
 	}
 
-	*:global(.cls-g) {
-		color: var.$secondary;
-	}
-}
-
-.logo_light {
-	--logo-neutral: #{var.$white};
-	--logo-secondary: #{var.$white};
-	--logo-primary: #{var.$white};
-	--logo-gradient_1: #{var.$white};
-	--logo-gradient_2: #{var.$white};
-
-	composes: logo;
-
-	*:global(.cls-s) {
-		color: var.$white;
+	*:global(.gradient_1) {
+		color: var(--logo-gradient_1);
 	}
 
-	*:global(.cls-p) {
-		color: var.$white;
+	*:global(.gradient_2) {
+		color: var(--logo-gradient_2);
 	}
 
-	*:global(.cls-n) {
-		color: var.$white;
-	}
-
-	*:global(.cls-g) {
-		color: var.$white;
+	&[data-version="white"] {
+		--logo-neutral: #{var.$white};
+		--logo-secondary: #{var.$white};
+		--logo-primary: #{var.$white};
+		--logo-gradient_1: #{var.$white};
+		--logo-gradient_2: #{var.$white};
 	}
 }
+
+

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import styles from './label.module.scss'
+import * as styles from './label.module.scss';
 
-const Label = ({children, ...attr}) => (
+const Label = ({ children, ...attr }) => (
 	<label className={styles.label} {...attr}>{children}</label>
-)
+);
 
-export default Label
+export default Label;

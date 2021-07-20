@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './hint.module.scss';
+import * as styles from './hint.module.scss';
 
 const Hint = ({ children, ...attr }) => (
 	<div className={styles.hint} {...attr}>{children}</div>

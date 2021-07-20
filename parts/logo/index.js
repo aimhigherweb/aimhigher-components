@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import AimHigher from '../../img/logo.svg'
+import AimHigher from '../../img/logo.svg';
+import * as styles from './logo.module.scss';
 
-const Logo = () => {
-	console.log()
+const Logo = ({ version }) => <AimHigher className={styles.logo} data-version={version} />;
 
-	return <AimHigher />
-}
-
-export default Logo
+export default Logo;

@@ -5,7 +5,7 @@ import {
 	Button, Error,
 	Input, 	Label
 } from "..";
-import styles from './password.module.scss';
+import * as styles from './password.module.scss';
 
 const Password = ({ children, ...attr }) => {
 	// TODO: remove next router from lib component
