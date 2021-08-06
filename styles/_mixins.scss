@@ -17,6 +17,39 @@
 	}
 }
 
+@mixin underline_animate {
+	display: inline-block;
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		bottom: 0%;
+		left: 0;
+		height: 0.4em;
+		background: var.$yellow;
+		background: var(--heading_underline);
+		transform: scaleX(0);
+		transform-origin: bottom right;
+		transition: transform .3s ease;
+	}
+
+	&:hover {
+		&:after {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+	}
+
+	@media (prefers-reduced-motion) {
+		&:after {
+			transition: none;
+		}
+	}
+}
+
 @mixin cover {
 	position: absolute;
 	top: 0;

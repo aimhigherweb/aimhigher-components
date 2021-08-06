@@ -73,10 +73,16 @@ pre, code, kbd {
 }
 
 a {
+	@include mixins.underline_animate;
+
 	color: var.$primary;
 
+	&:after {
+		height: 0.1em;
+		bottom: 0.2em;
+	}
+
 	&:hover {
-		@include mixins.underline;
 		text-decoration: none;
 	}
 
