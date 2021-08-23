@@ -31,6 +31,10 @@
 	--logo-gradient: url('#_LogoGradient');
 	--logo-gradient_1: url('#_LogoGradient1');
 	--logo-gradient_2: url('#_LogoGradient2');
+
+	/* Icons */
+	--icon_background: #{var.$primary};
+	--icon_primary: #{var.$white};
 }
 
 body, html {

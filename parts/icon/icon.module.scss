@@ -2,12 +2,15 @@
 	height: 1.5em;
 	fill: none;
 	color: var.$primary;
+	color: var(--icon_primary);
 
 	*[class$='cls-p'] {
 		color: var.$white;
+		color: var(--icon_primary);
 	}
 
 	*[class$='cls-b'] {
 		color: var.$primary;
+		color: var(--icon_background);
 	}
 }
