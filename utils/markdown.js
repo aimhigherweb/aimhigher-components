@@ -1,14 +1,14 @@
-import stringify from 'rehype-stringify';
-import remark from 'remark';
-import githubFlavour from 'remark-gfm';
-import parse from 'remark-parse';
-import rehype from 'remark-rehype';
+import MarkdownIt from 'markdown-it'
+import figures from 'markdown-it-image-figures'
 
-const processMarkdown = (content) => remark()
-	.use(parse)
-	.use(githubFlavour)
-	.use(rehype)
-	.use(stringify)
-	.processSync(content);
+const md = new MarkdownIt()
+
+const processMarkdown = (content) => md
+	.use(figures, {
+		lazy: true,
+		figcaption: true
+	})
+	.render(content)
+
 
 export default processMarkdown;
