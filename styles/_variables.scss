@@ -1,5 +1,6 @@
 // Colours
-$primary: #007cbb;
+$primary: #009DEE;
+$primary_dark: #005E8E;
 $primary_light_90: #1989c2;
 $primary_light_75: #409dcc;
 $primary_light_50: #80bedd;
@@ -11,7 +12,8 @@ $primary_dark_50: #003e5e;
 $primary_dark_25: #001f2f;
 $primary_dark_10: #000c13;
 
-$secondary: #00acbb;
+$secondary: #00A5B3;
+$secondary_dark: #00636B;
 $secondary_light_90: #19b4c2;
 $secondary_light_75: #40c1cc;
 $secondary_light_50: #80d6dd;
@@ -23,9 +25,10 @@ $secondary_dark_50: #00565e;
 $secondary_dark_25: #002b2f;
 $secondary_dark_10: #001113;
 
-$neutral: #000000;
+$neutral: #2e2e2e;
 $grey: #4c4c4d;
 $white: #ffffff;
+$black: #000000;
 $grey_light: #e5e5e5;
 
 $gradient: linear-gradient(138.17deg, $primary 18.9%, $secondary 82.35%);

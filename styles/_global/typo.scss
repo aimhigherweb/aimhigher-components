@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 
 	outline-offset: 0.2em;
 	text-decoration-skip-ink: auto;
@@ -26,12 +28,17 @@ body {
 	}
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
 	font-family: var.$font_headings;
 	letter-spacing: 0.03em;
 }
 
-h1, h2 {
+h1,
+h2 {
 	@include mixins.underline;
 }
 
@@ -68,7 +75,9 @@ em {
 	font-weight: 600;
 }
 
-pre, code, kbd {
+pre,
+code,
+kbd {
 	font-family: var.$font_code;
 }
 
@@ -76,6 +85,7 @@ a {
 	@include mixins.underline_animate;
 
 	color: var.$primary;
+	font-weight: 700;
 
 	&:after {
 		height: 0.1em;
@@ -149,7 +159,9 @@ table {
 }
 
 nav {
-	ul, li {
+
+	ul,
+	li {
 		margin: 0;
 		padding: 0;
 		list-style: none;
