@@ -1,17 +1,13 @@
-import MarkdownIt from 'markdown-it'
-import figures from 'markdown-it-image-figures'
+import MarkdownIt from 'markdown-it';
+import figures from 'markdown-it-image-figures';
 
-const md = new MarkdownIt()
+const md = new MarkdownIt();
 
-const processMarkdown = (content) => {
-	console.log({content, figures})
-	return md
+const processMarkdown = (content) => md
 	.use(figures, {
 		lazy: true,
 		figcaption: true
 	})
-	.render(content)
-}
-
+	.render(content);
 
 export default processMarkdown;
