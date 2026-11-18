@@ -1,0 +1,7 @@
+---
+import * as styles from './form.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<form {...attrs} class:list={[styles.form, className]}><slot /></form>

@@ -1,0 +1,8 @@
+---
+import * as inputStyles from '../input/input.module.scss';
+import * as styles from './textArea.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<textarea class:list={[inputStyles.input, styles.input, className]} {...attrs}></textarea>

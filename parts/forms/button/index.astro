@@ -1,0 +1,7 @@
+---
+import * as styles from './button.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<button class:list={[styles.button, className]} {...attrs}><slot /></button>

@@ -1,0 +1,10 @@
+---
+import * as styles from './faq.module.scss';
+
+const { title, ...attrs } = Astro.props;
+---
+
+<details class={styles.details} {...attrs}>
+	<summary class={styles.summary}>{title}</summary>
+	<slot />
+</details>
