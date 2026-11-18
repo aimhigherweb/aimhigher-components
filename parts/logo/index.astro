@@ -1,0 +1,8 @@
+---
+import AimHigher from '../../img/logo.svg';
+import * as styles from './logo.module.scss';
+
+const { version } = Astro.props;
+---
+
+<AimHigher class={styles.logo} data-version={version} />

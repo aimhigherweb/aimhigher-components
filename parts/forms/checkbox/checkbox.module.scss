@@ -1,3 +1,5 @@
+@use "lib/styles/variables" as var;
+
 .input {
 	position: absolute;
 	z-index: -100;
@@ -38,7 +40,6 @@
 	font-weight: 400;
 	text-transform: none;
 	cursor: pointer;
-	composes: label from '../label/label.module.scss';
 
 	&:before, &:after {
 		display: block;

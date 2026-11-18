@@ -1,3 +1,5 @@
+@use "lib/styles/variables" as var;
+
 pre {
 	position: relative;
 	margin: 0.5em 0;
@@ -74,8 +76,7 @@ code {
 		overflow: initial;
 	}
 
-	&::selection,
-	&::mozselection {
+	&::selection {
 		background: #6ca7d8;
 	}
 

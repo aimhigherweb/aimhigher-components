@@ -1,0 +1,7 @@
+---
+import * as styles from './input.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<input class:list={[styles.input, className]} {...attrs} />

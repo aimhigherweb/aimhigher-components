@@ -1,0 +1,7 @@
+---
+import * as styles from './label.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<label class:list={[styles.label, className]} {...attrs}><slot /></label>

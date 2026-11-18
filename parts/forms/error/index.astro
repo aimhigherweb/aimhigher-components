@@ -1,0 +1,7 @@
+---
+import * as styles from './error.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<div class:list={[styles.error, className]} {...attrs}><slot /></div>

@@ -1,0 +1,11 @@
+---
+import Legend from '../legend/index.astro';
+import * as styles from './fieldGroup.module.scss';
+
+const { legend, class: className, ...attrs } = Astro.props;
+---
+
+<fieldset {...attrs} class:list={[styles.group, className]}>
+	<Legend>{legend}</Legend>
+	<div class={styles.container}><slot /></div>
+</fieldset>

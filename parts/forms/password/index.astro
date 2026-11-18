@@ -1,0 +1,76 @@
+---
+import Icon from '../../icon/index.astro';
+import Button from '../button/index.astro';
+import Error from '../error/index.astro';
+import Input from '../input/index.astro';
+import Label from '../label/index.astro';
+import * as styles from './password.module.scss';
+
+const { validate = false, ...attrs } = Astro.props;
+---
+
+<ah-password data-validate={validate || undefined} data-validated-class={styles.validated}>
+	<Label for="password"><slot /></Label>
+	<div class={styles.password}>
+		<Input
+			type="password"
+			id="password"
+			name="password"
+			minlength="8"
+			pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,100})"
+			autocomplete="current-password"
+			required
+			{...attrs}
+		/>
+		<Button type="button" aria-pressed="false">
+			<Icon icon="password-hide" class={styles.hide} />
+			<Icon icon="password-show" class={styles.show} />
+			<span class="sr-only">Show Password</span>
+		</Button>
+	</div>
+	<Error tabindex="-1" hidden>
+		<Icon icon="error" class={styles.error_icon} />
+		<p>Your password fails to meet the following requirements:</p>
+		<ul></ul>
+	</Error>
+</ah-password>
+
+<script>
+	const rules = [
+		[(p) => !/.{8,}/.test(p), `Password must contain more than 8 characters`],
+		[(p) => !/\d+/.test(p), `Password must contain at least 1 number`],
+		[(p) => !/[A-Z]+/.test(p), `Password must contain at least 1 uppercase character`],
+		[(p) => /password/i.test(p), `Password must not contain the word <em>"password"</em>`],
+		[(p) => /.{100,}/.test(p), `Password must not be longer than 100 characters`],
+	];
+
+	class Password extends HTMLElement {
+		connectedCallback() {
+			const input = this.querySelector(`input`);
+			const toggle = this.querySelector(`button`);
+			const error = this.querySelector(`[hidden]`);
+			const list = error.querySelector(`ul`);
+			const validatedClass = this.dataset.validatedClass;
+
+			toggle.addEventListener(`click`, () => {
+				const visible = toggle.getAttribute(`aria-pressed`) !== `true`;
+				toggle.setAttribute(`aria-pressed`, String(visible));
+				input.type = visible ? `text` : `password`;
+			});
+
+			if (!(`validate` in this.dataset)) return;
+
+			const check = () => {
+				const errors = rules.filter(([fails]) => fails(input.value)).map(([, msg]) => msg);
+				list.innerHTML = errors.map((msg) => `<li>${msg}</li>`).join(``);
+				error.hidden = !errors.length;
+				input.classList.toggle(validatedClass, !errors.length);
+			};
+
+			input.addEventListener(`blur`, check);
+			input.addEventListener(`input`, check);
+		}
+	}
+
+	customElements.define(`ah-password`, Password);
+</script>

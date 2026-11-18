@@ -1,0 +1,8 @@
+---
+import * as labelStyles from '../label/label.module.scss';
+import * as styles from './legend.module.scss';
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<legend class:list={[labelStyles.label, styles.label, className]} {...attrs}><slot /></legend>

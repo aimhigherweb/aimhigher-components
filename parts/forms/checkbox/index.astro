@@ -1,0 +1,15 @@
+---
+import Label from '../label/index.astro';
+import * as styles from './checkbox.module.scss';
+
+const { type = `checkbox`, ...attrs } = Astro.props;
+const id = attrs.id || attrs.name;
+---
+
+<input
+	class:list={[styles.input, styles[`input_${type}`]]}
+	type={type}
+	{...attrs}
+	id={id}
+/>
+<Label class:list={[styles.label, styles[`label_${type}`]]} for={id}><slot /></Label>
