@@ -5,29 +5,28 @@
 *:before,
 *:after {
 
-	outline-offset: 0.2em;
+	outline-offset: 0.05em;
 	text-decoration-skip-ink: auto;
 	font-family: inherit;
 }
 
 *:focus {
-	outline: 3px solid var.$yellow;
+	outline: 4px dashed var.$pink;
 }
 
 body {
 	color: var.$neutral;
 	font-family: var.$font_main;
 	font-display: swap;
-	font-size: 16px;
 	font-weight: 500;
-	line-height: 1.4;
+	line-height: 1.5;
 
 	@media(min-width: 60em) {
-		font-size: 20px;
+		font-size: 1.25em;
 	}
 
 	@media(min-width: 90em) {
-		font-size: 24px;
+		font-size: 1.5em;
 	}
 }
 
@@ -38,6 +37,11 @@ h4,
 h5 {
 	font-family: var.$font_headings;
 	letter-spacing: 0.03em;
+	overflow-wrap: anywhere;
+
+	@media(min-width: 40em) {
+		overflow-wrap: initial;
+	}
 }
 
 h1,
@@ -48,7 +52,7 @@ h2 {
 h1 {
 	margin: 20px 0;
 	padding-right: 0.5em;
-	font-size: 3em;
+	font-size: 2.5em;
 	font-weight: 700;
 
 	&:after {
@@ -66,13 +70,12 @@ h1 {
 
 h2 {
 	padding-right: 1em;
-	font-size: 2em;
+	font-size: 1.8em;
 	font-weight: 600;
-	text-transform: uppercase;
 }
 
 em {
-	color: var.$pink;
+	color: var.$pink_bright;
 	color: var(--emphasis_text_colour);
 	font-style: italic;
 	font-weight: 600;
@@ -84,10 +87,20 @@ kbd {
 	font-family: var.$font_code;
 }
 
+// Inline code stays on one line; code blocks wrap (see _global/code.scss)
+code,
+kbd {
+	white-space: nowrap;
+}
+
+pre code {
+	white-space: inherit;
+}
+
 a {
 	@include mixins.underline_animate;
 
-	color: var.$primary;
+	color: var.$primary_dark;
 	font-weight: 700;
 
 	&:after {
@@ -99,6 +112,10 @@ a {
 		text-decoration: none;
 	}
 
+	&[disabled] {
+		pointer-events: none;
+	}
+
 	&.cta {
 		padding: 0.6em 1em 0.5em;
 		border: none;
@@ -108,7 +125,7 @@ a {
 		background: var(--button_background);
 		box-shadow: 0.13em 0.13em 0 0 var.$white;
 		box-shadow: 0.13em 0.13em 0 0 var(--button_shadow);
-		color: var.$white;
+		color: var.$purple_text;
 		color: var(--button_text);
 		margin: 20px auto;
 		font-weight: 700;
@@ -116,6 +133,7 @@ a {
 		width: auto;
 		display: inline-block;
 		text-transform: uppercase;
+		font-size: 1.5em;
 
 		&:hover {
 			border-color: var(--button_text);

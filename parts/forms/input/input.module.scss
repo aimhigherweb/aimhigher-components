@@ -8,7 +8,8 @@
 	border: 2px solid var.$primary_light_50;
 	background: var.$primary_light_50;
 	color: var.$black;
-	font-size: 1em;
+	font-size: 1.6em;
+	max-width: 100%;
 
 	&::placeholder {
 		color: var.$black;

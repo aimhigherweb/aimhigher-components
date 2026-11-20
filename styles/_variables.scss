@@ -25,7 +25,7 @@ $secondary_dark_50: #00565e;
 $secondary_dark_25: #002b2f;
 $secondary_dark_10: #001113;
 
-$neutral: #2e2e2e;
+$neutral: #171717;
 $grey: #4c4c4d;
 $white: #ffffff;
 $black: #000000;
@@ -33,12 +33,16 @@ $grey_light: #e5e5e5;
 
 $gradient: linear-gradient(138.17deg, $primary 18.9%, $secondary 82.35%);
 
-$blue: #318ce7;
-$darkpurple: #9440a0;
+$blue: #4899ea;
+$purple_dark: #853990;
+$purple_deep: #6c2e75;
 $green: #64ad66;
-$pink: #cb5699;
-$purple: #7561c1;
-$red: #e53f51;
+$green_dark: #204222;
+$pink: #a7205a;
+$pink_bright: #e26fb1;
+$purple: #5d46b3;
+$purple_light: #9b89e1;
+$red: #af1828;
 $yellow: #ffce03;
 $orange: #ff8c00;
 
@@ -47,6 +51,50 @@ $success: $good;
 $warning: $orange;
 $fail: $red;
 $error: $fail;
+
+// AAA Text colours
+$primary_text: $black;
+$primary_dark_text: $white;
+$primary_light_50_text: $black;
+$primary_light_25_text: $neutral;
+$primary_light_10_text: $neutral;
+$primary_dark_75_text: $white;
+$primary_dark_50_text: $white;
+$primary_dark_25_text: $white;
+$primary_dark_10_text: $white;
+
+$secondary_text: $black;
+$secondary_dark_text: $white;
+$secondary_light_90_text: $black;
+$secondary_light_75_text: $black;
+$secondary_light_50_text: $neutral;
+$secondary_light_25_text: $neutral;
+$secondary_light_10_text: $neutral;
+$secondary_dark_50_text: $white;
+$secondary_dark_25_text: $white;
+$secondary_dark_10_text: $white;
+
+$neutral_text: $white;
+$grey_text: $white;
+$white_text: $neutral;
+$black_text: $white;
+$grey_light_text: $neutral;
+
+$blue_text: $black;
+$purple_dark_text: $white;
+$green_text: $black;
+$pink_text: $white;
+$purple_text: $white;
+$purple_light_text: $black;
+$red_text: $white;
+$yellow_text: $neutral;
+$orange_text: $black;
+
+$good_text: $green_text;
+$success_text: $good_text;
+$warning_text: $orange_text;
+$fail_text: $red_text;
+$error_text: $fail_text;
 
 // Typography
 $font_main: Montserrat, Quicksand, Lato, sans-serif;

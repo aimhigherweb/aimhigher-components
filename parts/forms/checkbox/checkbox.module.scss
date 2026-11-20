@@ -5,8 +5,9 @@
 	z-index: -100;
 	opacity: 0;
 
-	&[checked] {
-		+ label {
+	&[checked],
+	&:checked {
+		+label {
 			&:after {
 				content: '';
 			}
@@ -14,15 +15,17 @@
 	}
 
 	&:focus {
-		+ label {
+		+label {
 			outline: 3px solid var.$yellow;
 		}
 	}
 }
 
 .input_checkbox {
-	&[checked] {
-		+ label {
+
+	&[checked],
+	&:checked {
+		+label {
 			&:after {
 				content: '✓';
 			}
@@ -41,15 +44,16 @@
 	text-transform: none;
 	cursor: pointer;
 
-	&:before, &:after {
+	&:before,
+	&:after {
 		display: block;
 		flex: 0 0 auto;
 	}
 
 	&:before {
 		content: '';
-		width: 20px;
-		height: 20px;
+		width: 1.85em;
+		height: 1.85em;
 		margin-right: 1ch;
 		border: 2px solid #48abdd;
 		background: #48abdd;
@@ -57,27 +61,17 @@
 
 	&:after {
 		position: absolute;
-		left: 3px;
+		left: 0.05em;
+		margin-bottom: 0.02em;
 		color: var.$neutral;
-		font-size: 1.3em;
-	}
-
-	@media(min-width: 60em) {
-		&:before {
-			width: 25px;
-			height: 25px;
-		}
-	}
-
-	@media(min-width: 90em) {
-		&:after {
-			font-size: 1.1em;
-		}
+		font-size: 2.1em;
 	}
 }
 
 .label_radio {
-	&:before, &:after {
+
+	&:before,
+	&:after {
 		border-radius: 50%;
 	}
 

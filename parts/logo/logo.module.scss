@@ -33,6 +33,12 @@
 		--logo-gradient_1: #{var.$white};
 		--logo-gradient_2: #{var.$white};
 	}
+
+	&[data-version="black"] {
+		--logo-neutral: #{var.$black};
+		--logo-secondary: #{var.$black};
+		--logo-primary: #{var.$black};
+		--logo-gradient_1: #{var.$black};
+		--logo-gradient_2: #{var.$black};
+	}
 }
-
-

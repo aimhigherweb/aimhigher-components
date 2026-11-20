@@ -4,4 +4,5 @@ import * as styles from './label.module.scss';
 const { class: className, ...attrs } = Astro.props;
 ---
 
+{/* eslint-disable-next-line astro/jsx-a11y/label-has-associated-control -- `for` comes through {...attrs}, which the rule can't see */}
 <label class:list={[styles.label, className]} {...attrs}><slot /></label>

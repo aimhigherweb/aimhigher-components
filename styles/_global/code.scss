@@ -1,13 +1,30 @@
 @use "lib/styles/variables" as var;
 
+// Code block colours. Each passes AAA (7:1) on both $code_bg and $code_highlight_bg.
+// Most are brand palette colours lightened just enough to pass on the dark background.
+$code_bg: var.$neutral;
+$code_highlight_bg: #232323;
+$code_text: #37beca; // $secondary_light_90, lightened
+$code_comment: #a4b0b0;
+$code_muted: #adadad; // punctuation, line numbers, prompts
+$code_pink: #e992c4; // $pink_bright, lightened
+$code_green: #80bc82; // $green, lightened
+$code_orange: #ff920d; // $orange, lightened
+$code_blue: #47b8f3; // $primary, lightened
+$code_purple: #b2a4e8; // $purple_light, lightened
+$code_yellow: var.$yellow;
+
 pre {
 	position: relative;
 	margin: 0.5em 0;
 	padding: 1em 2em;
 	overflow: auto;
-	border: 2px solid var.$neutral;
+	// Wrap long lines so code blocks don't scroll sideways (a scroll box needs keyboard access)
+	overflow-wrap: anywhere;
+	white-space: pre-wrap;
+	border: 2px solid $code_bg;
 	border-radius: 0.3em;
-	background: var.$neutral;
+	background: $code_bg;
 
 	&[class*='bash'] {
 		padding: 0.5em 1em;
@@ -21,7 +38,7 @@ pre {
 			padding: 5px 10px;
 			border-radius: 0 0 10px 10px;
 			background: var.$primary;
-			color: #ffffff;
+			color: var.$primary_text;
 		}
 	}
 
@@ -62,7 +79,7 @@ pre {
 
 pre,
 code {
-	color: var.$secondary;
+	color: $code_text;
 	font-family: var.$font_code;
 	font-size: 0.9em;
 	line-height: 1.5;
@@ -76,21 +93,23 @@ code {
 		overflow: initial;
 	}
 
-	&::selection {
-		background: #6ca7d8;
+	&::selection,
+	& ::selection {
+		background: var.$primary_dark_50;
+		color: var.$primary_dark_50_text;
 	}
 
-	& > code[class*='language-'] {
+	&>code[class*='language-'] {
 		position: relative;
 		z-index: 1;
 	}
 }
 
 :not(pre) {
-	& > code {
+	&>code {
 		padding: 0.1em 0.3em;
 		border-radius: 0.3em;
-		background: var.$primary_light_75;
+		background: var.$primary_light_50;
 		color: var.$neutral;
 		font-size: 0.8em;
 	}
@@ -106,7 +125,7 @@ pre {
 		padding-left: 3.8em;
 		counter-reset: linenumber;
 
-		& > code {
+		&>code {
 			position: relative;
 		}
 	}
@@ -119,8 +138,9 @@ pre {
 		position: absolute;
 		top: 0;
 		left: -3.8em;
-		width: 3em; /* works for line-numbers below 1000 lines */
-		border-right: 1px solid #999999;
+		width: 3em;
+		/* works for line-numbers below 1000 lines */
+		border-right: 1px solid $code_muted;
 		font-size: 100%;
 		letter-spacing: -1px;
 		pointer-events: none;
@@ -130,7 +150,7 @@ pre {
 		-ms-user-select: none;
 		user-select: none;
 
-		> span {
+		>span {
 			display: block;
 			counter-increment: linenumber;
 			pointer-events: none;
@@ -139,7 +159,7 @@ pre {
 				content: counter(linenumber);
 				display: block;
 				padding-right: 0.8em;
-				color: #999999;
+				color: $code_muted;
 				text-align: right;
 			}
 		}
@@ -153,8 +173,8 @@ pre {
 	left: 0;
 	margin-top: 1em;
 	padding: inherit 0;
-	background: #edf3f7;
-	box-shadow: inset 5px 0 0 #1c75bc;
+	background: $code_highlight_bg;
+	box-shadow: inset 5px 0 0 var.$primary;
 	line-height: inherit;
 	white-space: pre;
 	pointer-events: none;
@@ -165,15 +185,16 @@ pre {
 }
 
 .token {
+
 	&.comment,
 	&.prolog,
 	&.doctype,
 	&.cdata {
-		color: #93a1a1;
+		color: $code_comment;
 	}
 
 	&.punctuation {
-		color: #999999;
+		color: $code_muted;
 	}
 
 	&.property,
@@ -183,7 +204,7 @@ pre {
 	&.constant,
 	&.symbol,
 	&.deleted {
-		color: #990055;
+		color: $code_pink;
 	}
 
 	&.selector,
@@ -192,29 +213,29 @@ pre {
 	&.char,
 	&.builtin,
 	&.inserted {
-		color: #669900;
+		color: $code_green;
 	}
 
 	&.operator,
 	&.entity,
 	&.url {
-		color: #a67f59;
+		color: $code_orange;
 	}
 
 	&.atrule,
 	&.attr-value,
 	&.keyword {
-		color: #1c75bc;
+		color: $code_blue;
 	}
 
 	&.function {
-		color: #dd4a68;
+		color: $code_purple;
 	}
 
 	&.regex,
 	&.important,
 	&.variable {
-		color: #ee9900;
+		color: $code_yellow;
 	}
 
 	&.entity {
@@ -225,7 +246,7 @@ pre {
 .language-css,
 .style {
 	&.string {
-		color: #a67f59;
+		color: $code_orange;
 	}
 }
 
@@ -233,7 +254,7 @@ pre {
 	display: block;
 	margin-right: 1em;
 	float: left;
-	border-right: 1px solid #999999;
+	border-right: 1px solid $code_muted;
 	font-size: 100%;
 	letter-spacing: -1px;
 	pointer-events: none;
@@ -243,12 +264,12 @@ pre {
 	-ms-user-select: none;
 	user-select: none;
 
-	& > span {
+	&>span {
 		&:before {
 			content: ' ';
 			display: block;
 			padding-right: 0.8em;
-			color: #999999;
+			color: $code_muted;
 		}
 
 		&[data-user] {

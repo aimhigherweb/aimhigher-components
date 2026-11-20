@@ -18,6 +18,7 @@ import Projects from '../../img/icons/project.svg';
 import Success from '../../img/icons/success.svg';
 import Twitch from '../../img/icons/twitch.svg';
 import Twitter from '../../img/icons/twitter.svg';
+import Menu from '../../img/icons/menu.svg';
 import * as styles from './icon.module.scss';
 
 const { icon, class: className = `` } = Astro.props;
@@ -26,7 +27,7 @@ const icons = {
 	docs: Doc,
 	doc: Doc,
 	projects: Projects,
-	analytics: Analytics,
+	analytics: Analytics, 
 	chart: Analytics,
 	codepen: Codepen,
 	facebook: Facebook,
@@ -47,6 +48,7 @@ const icons = {
 	hamburger: Hamburger,
 	chevron: Chevron,
 	down: Chevron,
+	menu: Menu
 };
 
 const Img = icons[icon];

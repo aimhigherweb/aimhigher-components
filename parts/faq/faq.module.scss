@@ -16,11 +16,17 @@
 		--heading_underline: #{var.$yellow};
 
 		padding: 20px;
-		border-color: var.$pink;
+		border-color: var.$pink_bright;
 	}
 
-	&:hover, &:focus {
-		--heading_underline: #{var.$pink};
+	&:hover,
+	&:focus,
+	&:focus-visible,
+	&:has(summary:focus) {
+		--heading_underline: #{var.$pink_bright};
+
+		outline: 3px dashed var.$pink;
+		outline-offset: 0.3em;
 	}
 
 	@media(min-width: 60em) {
@@ -36,6 +42,7 @@
 	@include mixins.underline;
 
 	padding-right: 1em;
+	min-height: 44px;
 	font-size: 1.4em;
 	font-weight: 600;
 	text-transform: uppercase;

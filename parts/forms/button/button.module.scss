@@ -9,17 +9,23 @@
 	background: var(--button_background);
 	box-shadow: 0.13em 0.13em 0 0 var.$white;
 	box-shadow: 0.13em 0.13em 0 0 var(--button_shadow);
-	color: var.$white;
+	color: var.$purple_text;
 	color: var(--button_text);
-	font-size: 1.25em;
+	font-size: 1.35em;
 	font-weight: 700;
 	line-height: 1;
 	text-transform: uppercase;
+	outline-offset: 0.2em;
 
 	&:hover {
 		border-color: var(--button_text);
 		background: var(--button_text);
 		box-shadow: 0.13em 0.13em 0 0 var(--button_background);
 		color: var(--button_background);
+	}
+
+	&:focus,
+	&:focus-visible {
+		box-shadow: none;
 	}
 }
